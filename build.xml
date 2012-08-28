@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project name="hyprmx-sdk" basedir=".">	
+	<property environment="env" />
+	<filelist id="projects" dir=".">
+		<file name="./Code/HyprMX-SDK/build.xml"/>
+		<file name="./Code/HyprMX-Example-App/build.xml"/>
+<!--		<file name="./Code/HyprMX-Instrumentation-Tests/build.xml"/> -->
+	</filelist>
+	
+	<target name="setup">
+		<exec executable="android" failonerror="true" dir="./Code/HyprMX-SDK">
+			<arg line="update lib-project --path ." />
+		</exec>		
+		<exec executable="android" failonerror="true" dir="./Code/HyprMX-Example-App">
+			<arg line="update project --path ." />
+		</exec>		
+	</target>
+	
+	<target name="clean" depends="setup">
+		<subant>
+			<target name="clean"/>
+			<filelist refid="projects"/>
+		</subant>
+	</target>
+	<target name="debug" depends="setup">
+		<ant antfile="./Code/HyprMX-SDK/build.xml" target="debug" useNativeBasedir="true"/> 
+		<ant antfile="./Code/HyprMX-Example-App/build.xml" target="debug" useNativeBasedir="true"/>
+	</target>
+
+	<target name="install" depends="debug">
+		<ant antfile="./Code/HyprMX-Example-App/build.xml" target="installd" useNativeBasedir="true"/>
+	</target>
+	
+	<target name="emma" depends="clean">
+		<ant antfile="./Code/HyprMX-Instrumentation-Tests/build.xml" useNativeBasedir="true">
+			<target name="emma"/>
+			<target name="instrument"/>
+			<target name="installi"/>
+			<target name="test"/>
+		</ant>
+	</target>
+</project>

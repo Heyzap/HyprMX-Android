@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules" default="-post-compile">
+	<target name="-post-compile">
+		<if condition="${build.is.instrumented}">
+			<then>
+				<copy file="../../coverage.em" toFile="../HyprMX-Instrumentation-Tests/coverage.em" overwrite="true"/>
+				<delete file="coverage.em"/>
+			</then>
+		</if>
+	</target>
+</project>

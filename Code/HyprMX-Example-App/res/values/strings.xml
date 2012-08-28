@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HyprMX Example</string>
+    <string name="display_splashscreen">Display Splashscreen</string>
+    
+    <string-array name="list_items">
+        <item>Simple Banner</item>
+        <item>Simple Button</item>
+        <item>Simple Splashscreen</item>
+        <item>No UI Presentation</item>
+        <item>Dynamic Buttons</item>
+        <item>Dynamic Banners</item>
+        <item>Advanced Offer List</item>
+        <item>Settings</item>
+    </string-array>
+    
+    <string name="banner_description">Banner Views can be added to any layout. Once the banner is inflated, the SDK will make a request to the server to get offers. If the user has already been asked the required information they will be presented with the offer (or offer chooser in the case of multiple offers). The SDK will load the appropriate asset to fill the space alloted to it within the layout.</string>
+    <string name="dynamic_banner_description">Banner Views can be dynamically added to any layout. Once the banner is inflated, the SDK will make a request to the server to get offers. If the user has already been asked the required information they will be presented with the offer (or offer chooser in the case of multiple offers). The SDK will load the appropriate asset to fill the space alloted to it within the layout. Press the button below to add dynamic banners to the layout.</string>
+    <string name="button_description">Button Views can be added to any layout. Once the button is inflated, the SDK will make a request to the server to get offers. If the user has already been asked the required information they will be presented with the offer (or offer chooser in the case of multiple offers). The SDK will load the appropriate asset based on screen density. Included above are a small and a large button.</string>
+    <string name="dynamic_button_description">Button Views can be dynamically added to any layout. Once the button is inflated, the SDK will make a request to the server to get offers. If the user has already been asked the required information they will be presented with the offer (or offer chooser in the case of multiple offers). The SDK will load the appropriate asset based on screen density. Press the buttons below to add dynamic buttons to the layout.</string>
+    <string name="splashscreen_description">Splashscreens are full screen overlays that can be displayed over your content. Once loaded, the SDK will make a request to the server to get offers. If the user has already been asked the required information they will be presented with the offer (or the offer chooser in the case of multiple offers). The SDK will load the appropriate asset based on screen size and density. Tap the button below to show an offer splashscreen.</string>
+    <string name="advanced_offer_list_description">The SDK allows an application to request a list of offers that can then be displayed or utilized in any way desirable. Press the button below to request a list of offers. Tap on an offer title to display the offer.</string>
+    <string name="uid">User ID:\n(can be empty)</string>
+    <string name="dist">Distributor ID:</string>
+    <string name="persistent">Persistent ID:</string>
+    <string name="reset">Reset Persistent ID</string>
+    <string name="reset_uid">Reset User ID</string>
+    <string name="clear">Clear Settings</string>
+    <string name="prop">Property ID:</string>
+    <string name="save">Save</string>
+    <string name="base_url">Base URL:</string>
+    <string name="base_url_name">Base URL</string>
+</resources>
