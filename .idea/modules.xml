@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Code/HyprMX-Example-App/HyprMX-Example-App.iml" filepath="$PROJECT_DIR$/Code/HyprMX-Example-App/HyprMX-Example-App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../HyprMX-Mobile-Android-Internal/HyprMX-Instrumentation-Tests/HyprMX-Instrumentation-Tests.iml" filepath="$PROJECT_DIR$/../HyprMX-Mobile-Android-Internal/HyprMX-Instrumentation-Tests/HyprMX-Instrumentation-Tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../HyprMX-Mobile-Android-Internal/HyprMX-Mobile-Android-Internal.iml" filepath="$PROJECT_DIR$/../HyprMX-Mobile-Android-Internal/HyprMX-Mobile-Android-Internal.iml" />
       <module fileurl="file://$PROJECT_DIR$/Code/HyprMX-SDK/HyprMX-SDK.iml" filepath="$PROJECT_DIR$/Code/HyprMX-SDK/HyprMX-SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/Root.iml" filepath="$PROJECT_DIR$/Root.iml" />
     </modules>
