@@ -66,7 +66,7 @@ Only once you have received `onOffersAvailable` can you proceed to the second st
 
 ### Buttons
 
-To use a `HyprMXButton`, all you need to do is add one to your layout. Buttons come in two sizes, 'large' and 'small'. Your XML might look as follows:
+To use a `HyprMXButton`, all you need to do is add one to your layout. Buttons come in two sizes, 'large' and 'small'. Small buttons will generally be 50x50, while large buttons will generally be 150x150. Your XML might look as follows:
 
 ```xml
 <com.hyprmx.android.sdk.HyprMXButton  
@@ -79,7 +79,9 @@ To use a `HyprMXButton`, all you need to do is add one to your layout. Buttons c
 
 ### Banners
 
-Banners, similar to buttons, only require you to add them to your layout. Your XML might look like this:
+Banners, similar to buttons, only require you to add them to your layout. HyprMX will use the image that best fits your allocated banner width. Height will be sized to match, so be sure to use the 'wrap\_content' property for height. The actual banner size will vary based on device size and resolution.
+
+Your XML might look like this:
 
 ```xml
 <com.hyprmx.android.sdk.HyprMXBanner  
@@ -91,6 +93,8 @@ Banners, similar to buttons, only require you to add them to your layout. Your X
 ```
 
 ### Splash Screens
+
+A splash screen, unlike banners or buttons is not added to your layout. It will be displayed over your application.
 
 To display a splash screen, you invoke `displaySplashScreen` on the `HyprMXHelper` instance and provide a conforming `Activity` instance (see the Activities section) and, optionally, pass in an `ArrayList` of `HyprMXReward` objects specific to this splash screen. Your code might look like so:
 
