@@ -40,10 +40,7 @@ public class ExampleApplication extends Application {
 
 		// initialize the helper for this process.
 		HyprMXHelper.getInstance(this, prefs.getString(DISTRIBUTOR_ID_KEY, null), prefs.getString(PROPERTY_ID_KEY, null), prefs.getString(USER_ID_KEY, null));
-		HyprMXReward rewards[] = new HyprMXReward[2];
-		rewards[0] = new HyprMXReward(0, 0.01f, 1, "Cent", -1);
-		rewards[1] = new HyprMXReward(1, 0.005f, 1000, "Half a Cent", R.drawable.background);
-		HyprMXHelper.getInstance().setRewards(rewards);
+		setRewards();
 		HashMap<String, String> information = new HashMap<String, String >();
 // If you know the user's birthdate, save them the effort of entering it manually like this:
 //		information.put("dob", "1983-07-08");
@@ -58,5 +55,13 @@ public class ExampleApplication extends Application {
 		SharedPreferences prefs = getSharedPreferences(PREFS, Context.MODE_PRIVATE);
 		HyprMXHelper.resetInstance();
 		HyprMXHelper.getInstance(this, prefs.getString(DISTRIBUTOR_ID_KEY, null), prefs.getString(PROPERTY_ID_KEY, null), prefs.getString(USER_ID_KEY, null));
+		setRewards();
+	}
+	
+	private void setRewards() {
+		HyprMXReward rewards[] = new HyprMXReward[2];
+		rewards[0] = new HyprMXReward(0, 0.01f, 1, "Cent", -1);
+		rewards[1] = new HyprMXReward(1, 0.005f, 1000, "Half a Cent", android.R.drawable.btn_star);
+		HyprMXHelper.getInstance().setRewards(rewards);
 	}
 }

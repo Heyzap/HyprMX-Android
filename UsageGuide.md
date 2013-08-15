@@ -123,7 +123,7 @@ You might customize the rewards for your entire application as follows:
 ```java
 HyprMXReward rewards[] = new HyprMXReward[2];
 rewards[0] = new HyprMXReward(0, 0.01f, 1, "One Hundred Coins", -1);
-rewards[1] = new HyprMXReward(1, 0.005f, 1000, "Fifty Coins", R.drawable.background);
+rewards[1] = new HyprMXReward(1, 0.005f, 1000, "Fifty Coins", R.drawable.my\_reward\_icon);
 HyprMXHelper.getInstance().setRewards(rewards);
 ```
 

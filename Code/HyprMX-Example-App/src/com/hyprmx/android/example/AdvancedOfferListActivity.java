@@ -150,7 +150,8 @@ public class AdvancedOfferListActivity extends Activity {
 		private int _layoutId;
 		private int _textViewId;
 
-		public OfferArrayAdapter(Context context, int resource, int textViewResourceId, List<Offer> objects) {
+		@SuppressWarnings("SameParameterValue")
+        public OfferArrayAdapter(Context context, int resource, int textViewResourceId, List<Offer> objects) {
 			super(context, resource, textViewResourceId, objects);
 			_layoutId = resource;
 			_textViewId = textViewResourceId;

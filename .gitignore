@@ -35,3 +35,6 @@ coverage/
 .idea/workspace.xml
 .idea/.generators
 .idea/.rakeTasks
+
+# Always require JAR to be built from internal.
+Code/HyprMX-SDK/libs/hyprmx-sdk-internal.jar

@@ -81,17 +81,17 @@ The following section details how to utilize the Eclipse IDE to develop with the
 * Launch Eclipse. If this is your first time using Eclipse, you'll be asked to create a workspace. The defaults should be just fine.
 * In the Package Explorer, right-click and select `Import...` bringing up the following dialog.
 
-![Import project](http://f.cl.ly/items/0G0R3R2f380U3l2K0F0Q/Screen%20Shot%202012-10-02%20at%208.54.26%20AM.png)
+![Import project](./Docs/Resources/Screen%20Shot%202012-10-02%20at%208.54.26%20AM.png)
 
 * Select `General => Existing Project into Workspace`. This brings up the Import Projects dialog.
 * Click the `Browse...` button and navigate to the `HyprMX-Mobile-Android-SDK/Code` directory as depicted below.
 
-![Import projects](http://f.cl.ly/items/3X0r0d0S2g1F310V3G3E/Screen%20Shot%202012-10-02%20at%209.00.53%20AM.png)
+![Import projects](./Docs/Resources/Screen%20Shot%202012-10-02%20at%209.00.53%20AM.png)
 
 * Press the `Open` button.
 * You'll be presented with the following dialog.
 
-![Import](http://f.cl.ly/items/3S2S452j313M2t2r3e2I/Screen%20Shot%202012-10-02%20at%209.02.52%20AM.png)
+![Import](./Docs/Resources/Screen%20Shot%202012-10-02%20at%209.02.52%20AM.png)
 
 * Press the `Finish` button.
 	* Depending on your Eclipse workspace defaults, you might receive an error in the console that says something like `[2012-08-02 11:46:28 - com.hyprmx.android.sdk.HyprMXOfferViewerActivity] Android requires compiler compliance level 5.0 or 6.0. Found '1.4' instead. Please use Android Tools > Fix Project Properties.` If faced with this, right-click on the project name in the Package Explorer, go down to Android Tools and select Fix Project Properties as described.
@@ -99,6 +99,35 @@ The following section details how to utilize the Eclipse IDE to develop with the
 	* Any transient compiler errors following these steps can likely be cleared up by selecting `Project` => `Clean...` and selecting the `Clean all projects` radio button, then clicking okay.
 	
 * You _should_ now have a working Eclipse environment.
+
+## Setting up the IntelliJ IDEA environment
+
+The following section details how to use the HyprMX SDK. This guide assumes you already have your project up and running in IDEA.
+
+* Launch IntelliJ IDEA. Open your existing Android application.
+* Add the HyprMX-Android code to your app, either as a submodule or by copying it in.
+* You should now see the HyprMX-Android folder in IDEA.
+* Right click on your project and select "Open Module Settings".
+* Add a new module by clicking the + button. Select "Import Module"
+
+![Import Module](./Docs/Resources/ImportModule1.png)
+
+* Navigate HyprMX-Android/Code/HyprMX-SDK. Select the HyprMX-SDK directory.
+* Click "Next", "Next", "Next", "Finish" to import the module with the default settings.
+
+![Next](./Docs/Resources/ImportModule2.png)
+![Next](./Docs/Resources/ImportModule3.png)
+![Next](./Docs/Resources/ImportModule4.png)
+![Finish](./Docs/Resources/ImportModule5.png)
+
+* Select your App in the Modules list, then click Dependencies.
+* Click + to add a new dependency. Select "Module Dependency" and choose HyprMX-SDK.
+
+![Dependency](./Docs/Resources/Dependency.png)
+
+* Click "Apply" or "OK".
+* HyprMX is now set up as a dependency of your project and is ready for you to start using it.
+* IDEA does not support manifest merging, so you will need to follow the "AndroidManifest" instructions below.
 
 # Installing the example application
 
@@ -123,7 +152,7 @@ Running the example application from Eclipse requires an emulator ('Window => An
 * Right-click on the `HyprMX Example` project in the Package Explorer. Select `Run As => Android Application`.
 * If you have an emulator instance running or a physical device plugged in via USB, the example application will be installed and executed.
 
-![Import](http://f.cl.ly/items/1j2U2H0i230M0R3c471p/Screen%20Shot%202013-06-13%20at%204.30.53%20PM.png)
+![Import](./Docs/Resources/Screen%20Shot%202013-06-13%20at%204.30.53%20PM.png)
 
 If you need help setting up an emulator, the Android developer docs provides [setup][AVDSetup] and [reference][AVDReference] documentation. 
 
@@ -133,7 +162,7 @@ After creating a new Android Application Project:
 
 * Right click on your project, select `Properties => Android`. Under the Library section click 'Add' and select the HyprMX SDK. Click 'OK'.
 
-![Import](http://f.cl.ly/items/2v0S2O1e2c0Z0o3R273x/Screen%20Shot%202013-06-13%20at%204.50.26%20PM.png)
+![Import](./Docs/Resources/Screen%20Shot%202013-06-13%20at%204.50.26%20PM.png)
 
 * If you get an error message saying something like 'Found 2 versions of android-support-v4.jar in the dependency list', just
   copy the android-support-v4.jar file located in your project's lib folder and paste it in the libs folder of the HyprMX SDK library project.

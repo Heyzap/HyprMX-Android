@@ -29,7 +29,6 @@ public class MainActivity extends HyprMXActivity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				_presentation.show(MainActivity.this);
 			}
 		});
