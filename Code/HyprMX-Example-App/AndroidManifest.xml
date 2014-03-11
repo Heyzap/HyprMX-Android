@@ -32,6 +32,43 @@
         <activity android:name="SettingsActivity" />
         <activity android:name="SplashscreenActivity" />
         <activity android:name="NoUIPresentationActivity" />
+
+        <!--HYPR Activities/Services-->
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXOfferViewerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|uiMode|fontScale|screenLayout|locale"
+            android:label="HyprMX SDK"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXRequiredInformationActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXSplashActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXOfferListActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXNoOffersActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXWebTrafficActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|uiMode|fontScale|screenLayout|locale"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="com.hyprmx.android.sdk.service.ApplicationInstallService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" >
+        </service>
     </application>
 
 </manifest>

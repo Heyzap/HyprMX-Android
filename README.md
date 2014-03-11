@@ -27,7 +27,7 @@ The following prerequisites are required to utilize the HyprMX SDK.
 	
 	`$ <android-sdks>/tools/android update sdk`
 	
-	* You'll be (eventually) presented with a window that has a load of options that you can install. At a _minimum_ you'll need to install the "SDK Platform" under "Android 2.3.3 (API 10)". You'll likely want to use the latest SDK, currently Android 4.2.2 (API 17).
+	* You'll be (eventually) presented with a window that has a load of options that you can install. At a _minimum_ you'll need to install the *SDK Platform* under *Android 2.3.3 (API 10)*. You'll likely want to use the latest SDK, currently Android 4.2.2 (API 17). You'll also need to install the Android Support Library and the Android Support Repository.
 	
 * [Eclipse Indigo][Eclipse] or higher IDE is supported. 
 	* Ensure that [JDT plugin][JDT] is installed. It is included in most Eclipse packages. 
@@ -35,9 +35,10 @@ The following prerequisites are required to utilize the HyprMX SDK.
 
 * Alternatively, [Android Studio][AndroidStudio] or [IntelliJ][IntelliJ] IDEs are supported.
 
-For command line builds, you will additionally need:
+For command line builds, you will additionally need one of:
 
 * [Apache Ant 1.8][ant] or later.
+* [Gradle 1.8][Gradle] or later.
 
 [JDK]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [SDK]: http://developer.android.com/sdk/index.html
@@ -49,6 +50,7 @@ For command line builds, you will additionally need:
 [ant]: http://ant.apache.org/
 [AVDSetup]: http://developer.android.com/tools/devices/index.html
 [AVDReference]: http://developer.android.com/tools/help/emulator.html
+[Gradle]: http://gradle.org/
 
 # Building
 
@@ -62,6 +64,8 @@ The following sections detail how to build the SDK and the example application.
 * The easiest way to set up your environment is to execute the following command at the terminal. Note that for this command to be successful, you _must_ have the `android` executable from the Android SDK's `tools/` directory in your executable path.
 
 `$ ant setup`
+or
+`$ ./gradlew setup`
 
 * If this step fails, ensure that `android` is in your executable path and try again.
 
@@ -73,6 +77,13 @@ You should now have an environment capable of building the project. The followin
 * `clean`   : simply cleans the entire environment.
 * `debug`   : build the debug version of the SDK library project and the example application.
 * `install` : install the example application to a USB connected device or emulator
+
+The following targets are available through the Gradle build.gradle file:
+
+* `setup`   : updates local and project properties for building from the command line.
+* `clean`   : simply cleans the entire environment.
+* `assembleDebug`   : build the debug version of the SDK library project and the example application.
+* `installApp` : install the example application to a USB connected device or emulator
 
 ## Setting up the Eclipse environment
 
@@ -100,34 +111,41 @@ The following section details how to utilize the Eclipse IDE to develop with the
 	
 * You _should_ now have a working Eclipse environment.
 
-## Setting up the IntelliJ IDEA environment
+## Setting up the Android Studio/IntelliJ IDEA environment
 
-The following section details how to use the HyprMX SDK. This guide assumes you already have your project up and running in IDEA.
+The following section details how to use the HyprMX SDK. This guide assumes you already have your gradle-based project up and running in Android Studio/IDEA.
 
-* Launch IntelliJ IDEA. Open your existing Android application.
+* Launch Android Studio/IntelliJ IDEA. Open your existing Android application.
 * Add the HyprMX-Android code to your app, either as a submodule or by copying it in.
 * You should now see the HyprMX-Android folder in IDEA.
-* Right click on your project and select "Open Module Settings".
-* Add a new module by clicking the + button. Select "Import Module"
+* Find the path from the root of your project to the HyprMX SDK project and add it to the `settings.gradle` in the root of your project
+    * For example, with the project structure shown below:  
+    `include ':HyprMX-Android:Code:HyprMX-SDK'`
 
-![Import Module](./Docs/Resources/ImportModule1.png)
+![Add Include to settings.gradle](./Docs/Resources/studio-import-module1.png)
 
-* Navigate HyprMX-Android/Code/HyprMX-SDK. Select the HyprMX-SDK directory.
-* Click "Next", "Next", "Next", "Finish" to import the module with the default settings.
+* Add the path from above as a compile dependency to your app's `build.gradle` file:  
+`compile project(':HyprMX-Android:Code:HyprMX-SDK')`
 
-![Next](./Docs/Resources/ImportModule2.png)
-![Next](./Docs/Resources/ImportModule3.png)
-![Next](./Docs/Resources/ImportModule4.png)
-![Finish](./Docs/Resources/ImportModule5.png)
+![Add dependency to build.gradle](./Docs/Resources/studio-import-module2.png)
 
-* Select your App in the Modules list, then click Dependencies.
-* Click + to add a new dependency. Select "Module Dependency" and choose HyprMX-SDK.
+* Add the following code to your top-level `build.gradle`  
 
-![Dependency](./Docs/Resources/Dependency.png)
+```
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+```
 
-* Click "Apply" or "OK".
+![Add buildscript to build.gradle](./Docs/Resources/studio-import-module3.png)
+
 * HyprMX is now set up as a dependency of your project and is ready for you to start using it.
-* IDEA does not support manifest merging, so you will need to follow the "AndroidManifest" instructions below.
+* Android Studio/IDEA does not support manifest merging, so you will need to follow the [Android Manifest](#androidmanifest) instructions below.
 
 # Installing the example application
 
@@ -141,9 +159,9 @@ The following section details how to use the HyprMX SDK. This guide assumes you 
 
 `$ cd HyprMX-Mobile-Android-SDK`
 
-* Execute the following `ant` build command.
+* Execute the following `ant` or `gradle` build command.
 
-`$ ant install`
+`$ ant install` or `$ ./gradlew installApp`
 
 ## Running in Eclipse
 
@@ -156,6 +174,14 @@ Running the example application from Eclipse requires an emulator ('Window => An
 
 If you need help setting up an emulator, the Android developer docs provides [setup][AVDSetup] and [reference][AVDReference] documentation. 
 
+## Running in Android Studio/IntelliJ IDEA
+
+* Install Android Studio v0.3.1 or higher
+* Choose *Import Project* and select the `build.gradle` file in the root of the project
+* Choose the recommended *Use default gradle wrapper* import option
+* Open the Gradle tasks view
+* Double-click the `installApp` gradle task to execute it
+
 # Creating a New Application With Eclipse
 
 After creating a new Android Application Project:
@@ -167,7 +193,7 @@ After creating a new Android Application Project:
 * If you get an error message saying something like 'Found 2 versions of android-support-v4.jar in the dependency list', just
   copy the android-support-v4.jar file located in your project's lib folder and paste it in the libs folder of the HyprMX SDK library project.
 * Open the project.properties file located in the base of your project and add `manifestmerger.enabled=true`
-* In the event manifest merging fails (which can happen for a variety of reasons), see the Android Manifest section.
+* In the event manifest merging fails (which can happen for a variety of reasons), see the [Android Manifest](#androidmanifest) section.
 * See the UsageGuide for details on how to initialize the HyprMXHelper and show various offer types.
 
 ## AndroidManifest
@@ -230,3 +256,11 @@ If you are not using a merged manifest, the following activities and services *m
         android:stopWithTask="false" >
     </service>
 
+## Proguard
+
+If your app uses proguard, then be sure to add the following lines to your `proguard-project.txt` file:
+
+```
+-keepattributes InnerClasses
+-keep class com.hyprmx.** {*;}
+```

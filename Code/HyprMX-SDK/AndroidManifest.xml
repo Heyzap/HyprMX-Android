@@ -40,6 +40,11 @@
             android:name="com.hyprmx.android.sdk.activity.HyprMXNoOffersActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
+        <activity
+            android:name="com.hyprmx.android.sdk.activity.HyprMXWebTrafficActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|uiMode|fontScale|screenLayout|locale"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
 
         <service
             android:name="com.hyprmx.android.sdk.service.ApplicationInstallService"
