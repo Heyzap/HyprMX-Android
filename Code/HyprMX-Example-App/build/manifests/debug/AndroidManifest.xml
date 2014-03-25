@@ -1,0 +1,48 @@
+<!-- From: file:/Users/jeremy/JunGroup/HyprMX-Android-Private/HyprMX-Mobile-Android-SDK/Code/HyprMX-Example-App/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="6" android:versionName="1.05" package="com.hyprmx.android.example">
+
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+
+    <application android:label="@string/app_name" android:name="com.hyprmx.android.example.ExampleApplication">
+        <activity android:label="@string/app_name" android:name="com.hyprmx.android.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.hyprmx.android.example.AdvancedOfferListActivity"/>
+        <activity android:name="com.hyprmx.android.example.BannerActivity"/>
+        <activity android:name="com.hyprmx.android.example.ButtonActivity"/>
+        <activity android:name="com.hyprmx.android.example.DynamicBannerActivity"/>
+        <activity android:name="com.hyprmx.android.example.DynamicButtonActivity"/>
+        <activity android:name="com.hyprmx.android.example.SettingsActivity"/>
+        <activity android:name="com.hyprmx.android.example.SplashscreenActivity"/>
+        <activity android:name="com.hyprmx.android.example.NoUIPresentationActivity"/>
+
+        <!--HYPR Activities/Services-->
+        <activity android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|uiMode|fontScale|screenLayout|locale" android:label="HyprMX SDK" android:launchMode="singleTop" android:name="com.hyprmx.android.sdk.activity.HyprMXOfferViewerActivity" android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity android:name="com.hyprmx.android.sdk.activity.HyprMXRequiredInformationActivity" android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity android:name="com.hyprmx.android.sdk.activity.HyprMXSplashActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:name="com.hyprmx.android.sdk.activity.HyprMXOfferListActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:name="com.hyprmx.android.sdk.activity.HyprMXNoOffersActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|uiMode|fontScale|screenLayout|locale" android:name="com.hyprmx.android.sdk.activity.HyprMXWebTrafficActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+
+        <service android:enabled="true" android:exported="false" android:name="com.hyprmx.android.sdk.service.ApplicationInstallService" android:stopWithTask="false">
+        </service>
+    </application>
+    <!-- From: file:/Users/jeremy/JunGroup/HyprMX-Android-Private/HyprMX-Mobile-Android-SDK/Code/HyprMX-Example-App/build/exploded-aar/HyprMX-Mobile-Android-SDK.Code/HyprMX-SDK/unspecified/AndroidManifest.xml -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- From: file:/Users/jeremy/JunGroup/HyprMX-Android-Private/HyprMX-Mobile-Android-SDK/Code/HyprMX-Example-App/AndroidManifest.xml -->
+    
+
+</manifest>
