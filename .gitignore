@@ -38,3 +38,6 @@ coverage/
 
 # Always require JAR to be built from internal.
 Code/HyprMX-SDK/libs/hyprmx-sdk-internal.jar
+
+Code/HyprMX-SDK/build
+Code/HyprMX-Example-App/build

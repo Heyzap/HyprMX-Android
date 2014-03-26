@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":HyprMX-Mobile-Android-SDK:Code:HyprMX-SDK" />
+        <option name="GRADLE_PROJECT_PATH" value=":HyprMX-Mobile-Android-SDK:Code:Simple Example" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -15,7 +15,6 @@
         <option name="SOURCE_GEN_TASK_NAME" value="generateDebugSources" />
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/res" />
-        <option name="LIBRARY_PROJECT" value="true" />
       </configuration>
     </facet>
   </component>
@@ -67,10 +66,7 @@
     <orderEntry type="jdk" jdkName="Android API 17 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
-    <orderEntry type="library" exported="" name="restclient" level="project" />
-    <orderEntry type="library" exported="" name="YouTubeAndroidPlayerApi" level="project" />
-    <orderEntry type="library" exported="" name="hyprmx-sdk-internal" level="project" />
-    <orderEntry type="library" exported="" name="concurrentlinkedhashmap-lru-1.2_jdk5" level="project" />
+    <orderEntry type="module" module-name="HyprMX-SDK" exported="" />
   </component>
 </module>
 
