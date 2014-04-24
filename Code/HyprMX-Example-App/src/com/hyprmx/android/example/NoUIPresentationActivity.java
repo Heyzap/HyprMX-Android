@@ -2,6 +2,7 @@ package com.hyprmx.android.example;
 
 import com.hyprmx.android.sdk.HyprMXPresentation;
 import com.hyprmx.android.sdk.api.data.OffersAvailableResponse;
+import com.hyprmx.android.sdk.api.data.Offer;
 import com.hyprmx.android.sdk.utility.OfferHolder;
 import com.hyprmx.android.sdk.utility.OfferHolder.OnOffersAvailableResponseReceivedListener;
 
@@ -41,8 +42,11 @@ public class NoUIPresentationActivity extends BaseActivity {
 
 							@Override
 							public void onOffersAvailable(
-									OffersAvailableResponse arg0) {
+									OffersAvailableResponse offersAvailable) {
 								showButton.setVisibility(View.VISIBLE);
+								for (Offer o : offersAvailable.getOffersAvailable()) {
+									o.setTransactionId("PartnerCode");
+								}
 							}
 
 							@Override

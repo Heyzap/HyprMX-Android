@@ -66,6 +66,10 @@
     <orderEntry type="jdk" jdkName="Android API 17 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
+    <orderEntry type="library" exported="" name="restclient" level="project" />
+    <orderEntry type="library" exported="" name="YouTubeAndroidPlayerApi" level="project" />
+    <orderEntry type="library" exported="" name="hyprmx-sdk-internal" level="project" />
+    <orderEntry type="library" exported="" name="concurrentlinkedhashmap-lru-1.2_jdk5" level="project" />
     <orderEntry type="module" module-name="HyprMX-SDK" exported="" />
   </component>
 </module>

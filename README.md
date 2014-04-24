@@ -27,7 +27,7 @@ The following prerequisites are required to utilize the HyprMX SDK.
 	
 	`$ <android-sdks>/tools/android update sdk`
 	
-	* You'll be (eventually) presented with a window that has a load of options that you can install. At a _minimum_ you'll need to install the *SDK Platform* under *Android 4.2.2 (API 17)*. We strongly recommend that you use the latest SDK, currently Android 4.4.2 (API 19). You'll also need to install the Android Support Library and the Android Support Repository.
+	* You'll be (eventually) presented with a window that has a load of options that you can install. At a _minimum_ you'll need to install the *SDK Platform* under *Android 2.3.3 (API 10)*. You'll likely want to use the latest SDK, currently Android 4.2.2 (API 17). You'll also need to install the Android Support Library and the Android Support Repository.
 	
 * [Eclipse Indigo][Eclipse] or higher IDE is supported. 
 	* Ensure that [JDT plugin][JDT] is installed. It is included in most Eclipse packages. 
