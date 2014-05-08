@@ -224,37 +224,7 @@ To enable location services within the SDK, additionally enable one of the locat
 
 Ideally, you will be able to merge manifests automatically using the manifestmerger. If this fails, you can turn off merging and add the HyprMX Manifest requirements directly to your application manifest.
 
-If you are not using a merged manifest, the following activities and services *must* be added to your manifest. If they are not, the HyprMX library will crash.
-
-    <activity
-        android:name="com.hyprmx.android.sdk.activity.HyprMXOfferViewerActivity"
-        android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|uiMode|fontScale|screenLayout|locale"
-        android:label="HyprMX SDK"
-        android:launchMode="singleTop"
-        android:theme="@android:style/Theme.NoTitleBar" >
-    </activity>
-    <activity
-        android:name="com.hyprmx.android.sdk.activity.HyprMXRequiredInformationActivity"
-        android:theme="@android:style/Theme.NoTitleBar" >
-    </activity>
-    <activity
-        android:name="com.hyprmx.android.sdk.activity.HyprMXSplashActivity"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-    </activity>
-    <activity
-        android:name="com.hyprmx.android.sdk.activity.HyprMXOfferListActivity"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-    </activity>
-    <activity
-        android:name="com.hyprmx.android.sdk.activity.HyprMXNoOffersActivity"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-    </activity>
-    <service
-        android:name="com.hyprmx.android.sdk.service.ApplicationInstallService"
-        android:enabled="true"
-        android:exported="false"
-        android:stopWithTask="false" >
-    </service>
+If you are not using a merged manifest, open the AndroidManifest.xml located in the SDK and copy all the activities and services from the `<application>` block into your own `<application>` block in the AndroidManifest.xml for your application. Be sure to update this when you update the HyprMX SDK. For this reason, we recomend using Manifest Merging if possible.
 
 ## Proguard
 
