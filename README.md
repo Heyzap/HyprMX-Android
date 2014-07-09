@@ -1,6 +1,8 @@
 # HyprMX Android SDK
 
-This is the main repository for the HyprMX Android SDK. 
+This is the main repository for the HyprMX Android SDK.
+
+By downloading this SDK, you are agreeing to the [LICENSE](./LICENSE)
 
 # Structure
 
