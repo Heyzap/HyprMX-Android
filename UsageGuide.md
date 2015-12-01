@@ -1,6 +1,6 @@
 # HyprMX Android Usage Guide
 
-Now that you have the HyprMX library installed in your project, it's time to put it to work! To help you integrate HyprMX into your application, we will first provide a brief overview of the workflow and concepts, and then concrete examples of how to use the library.
+Now that you have the HyprMX library installed in your project, it's time to put it to work! To help you integrate HyprMX into your application, we will first provide a brief overview of the workflow and concepts, and then concrete examples of how to use the library. Please note that the current release of our Android SDK does not serve ads on Lollipop or Marshmallow due to a bug in Google's YouTube API which can cause crashes on these OS versions. 
 
 ## Overview
 
